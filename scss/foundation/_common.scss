@@ -1,0 +1,275 @@
+@use "../global" as *;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $fBASE;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  word-break: break-all;
+  color: $cBlack;
+  padding-top:100px;
+  
+}
+
+a {
+  text-decoration: none;
+  color: $cBlack;
+}
+
+li {
+  list-style: none;
+}
+
+._kiwi {
+  font-family: $fKIWI;
+}
+
+.section_inner {
+  width:90%;
+  margin:5% auto;
+}
+
+main {
+  margin-bottom:10%;
+  overflow: hidden;
+  @include mq(tab){
+    margin-bottom: 15%;
+  }
+}
+
+.ttl {
+  font-size:2.3rem;
+  font-weight: 400;
+  text-align: center;
+  position: relative;
+  @include mq(sp){
+    font-size: 1.5rem;
+  }
+  &_anderline {
+    display: block;
+    margin: 5% auto;
+    &::before {
+      content:'';
+      display: inline-block;
+      position: absolute;
+      width:50px;
+      height: 3px;
+      bottom:-20px;
+      left:50%;
+      transform: translate(-50%,-50%);
+      background-color: $cBlack;
+      background-repeat: no-repeat;
+      @include mq(sp){
+        width:42px;
+        height: 2px;
+      }
+    }
+  }
+  &_anderline_w {
+    display: block;
+    margin-bottom: 5%;
+    &::before {
+      content:'';
+      display: inline-block;
+      position: absolute;
+      width:50px;
+      height: 3px;
+      bottom:-20px;
+      left:48%;
+      background-color: $cWhite;
+      background-repeat: no-repeat;
+      @include mq(sp){
+        width:42px;
+        height: 2px;
+        left:44%;
+      }
+    }
+  }
+}
+
+.subttl {
+  font-size:2rem;
+  font-weight: 400;
+  text-align: center;
+  position:relative;
+  margin-top:10%;
+  @include mq(tab){
+    font-size: 1.3rem;
+    margin-top:20%;
+  }
+  &_radius {
+    display: block;
+    margin-bottom:5%;
+    position:absolute;
+    width:15px;
+    height: 15px;
+    top:60px;
+    border-radius: 50%;
+    background-color: $cWhite;
+    @include mq(tab){
+      width:10px;
+      height: 10px;
+      top:45px;
+    }
+    &::before {
+      content:'';
+      display:inline-block;
+      position:absolute;
+      width:15px;
+      height: 15px;
+      left:30px;
+      border-radius: 50%;
+      background-color: $cWhite;
+      margin:5%;
+      @include mq(tab){
+        width:10px;
+        height:10px;
+        left:25px;
+      }
+    }
+    &::after {
+      content:'';
+      display:inline-block;
+      position:absolute;
+      width:15px;
+      height: 15px;
+      right:30px;
+      border-radius: 50%;
+      background-color: $cWhite;
+      margin:5%;
+      @include mq(tab){
+        width:10px;
+        height: 10px;
+        right:25px;
+      }
+    }
+  }
+  &_item {
+    @include flex();
+  }
+}
+
+.diagonal-line {
+  position: relative;
+  &::before {
+    content:"";
+    position: absolute;
+    width:300px;
+    height: 300px;
+    background-image: url(../img/asirai.png);
+    z-index: 10;
+    display: block;
+    @include mq(tab){
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+  
+}
+
+.backgroundcolor_blue {
+  background-color: $cBlueBase;
+  color: $cWhite;
+  padding-bottom:50px;
+  &::before {
+    top:-182px;
+    right:-60px;
+    @include mq(tab){
+      top:-129px;
+      right:-192px;
+    }
+  }
+}
+
+.backgroundcolor_white {
+  background-color: $cWhite;
+  &::before {
+    top:-145px;
+    left:0;
+  }
+}
+
+.fadeUp {
+  animation:  fadeUpAnime 1s forwards;
+  opacity: 0;
+}
+
+.box {
+  opacity: 0;
+}
+
+.fadeLeft {
+  animation:  fadeLeftAnime 1s forwards;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.fadeRight {
+  animation:  fadeRightAnime 1s forwards;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.fadeUpTrigger,
+.fadeLeftTrigger,
+.fadeRightTrigger {
+  opacity:0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRightAnime {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+@media screen and (min-width: 680px) {
+    .pc {
+      display: inline;
+    }
+    .sp {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 680px) {
+    .pc {
+      display: none;
+    }
+    .sp {
+      display: inline;
+    }
+  }

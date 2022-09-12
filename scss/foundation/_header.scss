@@ -1,0 +1,260 @@
+@use "../global" as *;
+
+.header {
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 30;
+    background-color: $cWhite;
+    height:110px;
+    padding: 10px 12px 10px 28px;
+    box-sizing: border-box;
+    @include mq(tab){
+        padding:10px 20px;
+        height: 77px;
+    }
+    &_wrapper {
+        @include flex(space-between);
+        
+        margin:0 auto;
+        &_left{
+            width: 9%;
+            @include mq(tab){
+                width:14%;
+            }
+            @include mq(sp){
+                width: 22%;
+            }
+            img {
+                width:100%;
+            }
+        }
+        &_right_nav {
+                
+                &_list {
+                    display: flex;
+                    align-items: center;
+                    
+                    &_item {
+                        
+                        a {
+                            padding-right:1.1rem;
+                            font-size: 0.9rem;
+                            transition: 0.3s;
+                            @include mq(pc){
+                                font-size: 0.8rem;
+                            }
+                            @include mq(tab) {
+                                line-height: 3;
+                                font-size: 1.5rem;
+                            }
+                            &:hover {
+                                transition: 0.3s;
+                                color:$cBlue;
+                            }
+                        }
+                        &_tel {
+                            
+                            margin-left:auto;
+                            &_inner{
+                                span {
+                                    display: block;
+                                    font-size: 0.8rem;
+                                    margin-bottom:1%;
+                                    
+                                }
+                                &_item {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-bottom:2%;
+                                    
+                                    &_img {
+                                        
+                                        width:2.6rem;
+                                        align-items: center;
+                                        
+                                        img {
+                                            width:100%;
+                                            align-items: center;
+                                            margin-top:10%;
+                                        }
+                                    }
+                                    &_num {
+                                        font-weight: 500;
+                                        color:$cBlue;
+                                        font-size: 1.8rem;
+                                        align-items: center;
+                                        @include mq(pc){
+                                            font-size: 1.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        
+                        }
+                    }
+                    ._tabnone {
+                        @include mq(tab){
+                            display: none;
+                        } 
+                    }
+                    
+                }
+            }
+    }
+}
+
+#g-nav{
+    @include mq(tab){
+        /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+        position:fixed;
+        z-index: 999;
+        /*ナビのスタート位置と形状*/
+        top:0;
+        right: -120%;
+        width:100%;
+        height: 100vh;/*ナビの高さ*/
+        background:rgba($color: #fff, $alpha: 0.8);
+        /*動き*/
+        transition: all 0.6s;
+        &.panelactive{
+            right: 0;/*アクティブクラスがついたら位置を0に*/
+            #g-nav-list{
+                /*ナビの数が増えた場合縦スクロール*/
+                position: fixed;
+                z-index: 999; 
+                width: 100%;
+                height: 100vh;/*表示する高さ*/
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+    }
+}
+
+
+
+/*ナビゲーション*/
+#g-nav ul {
+    @include mq(tab){
+        /*ナビゲーション天地中央揃え*/
+        position: absolute;
+        z-index: 999;
+        top:50%;
+        left:40%;
+        transform: translate(-50%,-50%);
+        display: block;
+    }
+}
+
+/*リストのレイアウト設定*/
+#g-nav li{
+    @include mq(tab){
+    text-align: left;
+    }
+}
+
+#g-nav li a{
+    @include mq(tab){
+	color: $cBlack;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	white-space: nowrap;
+    }
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+    @include mq(tab) {
+        position: fixed;
+        z-index: 9999;
+        top: 8px;
+        right: 0px;
+        cursor: pointer;
+        width: 79px;
+        height: 40px;
+        
+        span{
+            display: inline-block;
+            transition: all .4s;
+            position: absolute;
+            left: 14px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: $cBlueBase;
+            width: 45%;
+            &:nth-of-type(1) {
+                top:15px;	
+            }
+            &:nth-of-type(2) {
+                top:30px;
+            }
+            &:nth-of-type(3) {
+                top:45px;
+            }
+        }
+        &.active span {
+            &:nth-of-type(1) {
+                top: 18px;
+                left: 18px;
+                transform: translateY(6px) rotate(-45deg);
+                width: 50%;
+            }
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+            &:nth-of-type(3){
+                top: 30px;
+                left: 18px;
+                transform: translateY(-6px) rotate(45deg);
+                width: 50%;
+            }
+        }
+    }
+    @include mq(sp){
+        right: -11px;;
+    }
+}
+	
+
+
+
+
+
+/*スクロール途中でヘッダーが表示非表示*/
+
+#header.UpMove {
+    animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+    opacity: 1;
+    transform:translateY(0) ;
+    }
+
+    to {
+    opacity: 0;
+    transform: translateY(-100px);
+    }
+}
+
+#header.DownMove {
+    animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime {
+    from {
+    opacity: 0;
+    transform: translateY(-100px);
+    }
+
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+

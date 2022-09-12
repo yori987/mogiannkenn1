@@ -1,0 +1,198 @@
+@use "../global" as *;
+
+.footer {
+    
+    &::before{
+        top:-200px;
+        right:0px;
+        @include mq(tab){
+            top:-130px;
+            right:107px;
+        }
+    }
+    &_1 {
+        @include flex();
+        width:100%;
+        margin-bottom:5%;
+        @include mq(tab){
+            flex-direction: column-reverse;
+        }
+        &_left {
+            width:60%;
+            @include mq(pc){
+                width: 80%;
+            }
+            @include mq(tab){
+                width:100%;
+            }
+            &_inner {
+                width:90%;
+                margin:0 auto 0 10%;
+                @include mq(pc){
+                    margin:0 auto;
+                }
+                @include mq(tab){
+                    width:70%;
+                }
+                @include mq(sp){
+                    width:90%;
+                }
+                &_img {
+                    width:35%;
+                    
+                    img {
+                        width:100%;
+                        
+                    }
+                }
+                &_tel {
+                    width:80%;
+                    margin:5% auto;
+                    span {
+                        
+                    }
+                    &_num {
+                        display: flex;
+                        align-items: center;
+                        margin-top:3%;
+                        &_img {
+                            width:13%;
+                            @include mq(tab){
+                                display: none;
+                            }
+                            img {
+                                width:100%;
+                            }
+                        }
+                        &_item {
+                            font-size:1.8rem;
+                            white-space: nowrap;
+                            color:$cBlue;
+                            @include mq(tab){
+                                font-size: 1.3rem;
+                            }
+                        }
+                    }
+                }
+                &_table {
+                    width:100%;
+                    margin:3% auto;
+                    table {
+                    }
+                    p {
+                        margin-top:3%;
+                        @include mq(tab){
+                            font-size: 0.8rem;
+                        }
+                    }
+                    th {
+                        &:first-child{
+                            @include mq(tab){
+                                padding-left:5px;
+                                padding-right:5px;
+                            }
+                        }
+                        @include mq(tab){
+                            width: 25%;
+                            font-weight: 400;
+                        }
+                    }
+                    ._noneline {
+                        small {
+                            @include mq(tab){
+                                font-size: 0.1rem;
+                            }
+                        }
+                        @include mq(tab){
+                            font-size: 0.1em;
+                        }
+                    }
+                    .reception-time_inner_time-table_list_item_check {
+                        @include mq(tab){
+                            top:3px;
+                        }
+                        &::before {
+                            @include mq(tab){
+                                width:15px;
+                                height: 15px;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        &_right {
+            width:40%;
+            @include mq(tab){
+                width:100%;
+            }
+            &_map {
+                width:100%;
+                iframe {
+                    width:100%;
+                }
+            }
+        }
+    }
+    &_2 {
+        background-color:$cBlueBase;
+        @include flex();
+        &_inner {
+            margin:5% auto 0;
+            width:60%;
+            @include mq(tab){
+                width:90%;
+            }
+            &_nav {
+                &_list {
+                    @include flex(space-between);
+                    li {
+                        transition: 0.2s;
+                        &:hover {
+                            transition:0.2s;
+                            opacity: 0.5;
+                        }
+                        a {
+                        color:$cWhite;
+                        @include mq(tab){
+                            font-size:1rem;
+                        }
+                        @include mq(sp){
+                            font-size: 0.3rem;
+                        }
+                        }
+                    }
+                }
+            }
+            &_sns {
+                @include flex(space-between);
+                width:30%;
+                margin:10% auto 5%;
+                li {
+                    transition: 0.2s;
+                    &:hover {
+                        transition: 0.2s;
+                        transform: translateY(-5px);
+                    }
+                    a {
+                    color:$cWhite;
+                    font-size: 2.25rem;
+                    @include mq(tab){
+                        font-size:1.25rem;
+                    }
+                    }
+                }
+            }
+            small {
+                display: block;
+                text-align: center;
+                color:$cWhite;
+                font-size: 0.8rem;
+                @include mq(tab){
+                    font-size:0.3rem;
+                }
+            }
+        }
+    }
+}
