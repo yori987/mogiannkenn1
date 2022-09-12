@@ -164,7 +164,7 @@ $(window).scroll(function(){
 function FixedAnime(){
   let wid = $(window).width();
   
-  if (wid > 1024) {
+  if (wid > 1200) {
     $(window).scroll(function(){
       if ($(window).scrollTop()> 450){
         $('#reception-time').addClass('fixed');
@@ -174,7 +174,7 @@ function FixedAnime(){
     });
   }
 
-  if (wid > 768) {
+  if (wid > 768 && wid < 1200) {
     $(window).scroll(function(){
       if ($(window).scrollTop()> 916){
         $('#reception-time').addClass('fixed');

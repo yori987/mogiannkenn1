@@ -33,30 +33,41 @@
                 }
                 @include mq(tab){
                     width:70%;
+                    margin:5% auto;
                 }
                 @include mq(sp){
                     width:90%;
                 }
                 &_img {
-                    width:35%;
-                    
+                    width:20%;
+                    @include mq(tab){
+                        margin-left:5%;
+                    }
                     img {
                         width:100%;
                         
                     }
                 }
                 &_tel {
-                    width:80%;
+                    width:70%;
                     margin:5% auto;
+                    @include mq(tab){
+                        width:50%;
+                    }
+                    @include mq(sp){
+                        width:65%;
+                    }
                     span {
-                        
+                        @include mq(sp){
+                            font-size: 0.7rem;
+                        }
                     }
                     &_num {
                         display: flex;
                         align-items: center;
                         margin-top:3%;
                         &_img {
-                            width:13%;
+                            width:10%;
                             @include mq(tab){
                                 display: none;
                             }
@@ -71,18 +82,27 @@
                             @include mq(tab){
                                 font-size: 1.3rem;
                             }
+                            @include mq(sp){
+                                font-size: 1rem;
+                            }
                         }
                     }
                 }
                 &_table {
-                    width:100%;
+                    width:85%;
                     margin:3% auto;
+                    @include mq(sp){
+                        width:100%;
+                    }
                     table {
+                        @include mq(sp){
+                            font-size:0.7rem;
+                        }
                     }
                     p {
                         margin-top:3%;
                         @include mq(tab){
-                            font-size: 0.8rem;
+                            font-size: 0.7rem;
                         }
                     }
                     th {
@@ -90,6 +110,9 @@
                             @include mq(tab){
                                 padding-left:5px;
                                 padding-right:5px;
+                            }
+                            @include mq(sp){
+                                white-space: nowrap;
                             }
                         }
                         @include mq(tab){
@@ -123,14 +146,28 @@
             }
         }
         &_right {
-            width:40%;
+            width:45%;
+            
             @include mq(tab){
                 width:100%;
             }
             &_map {
                 width:100%;
+                height: 0;
+                padding-top:65%;
+                position: relative;
+                @include mq(pc){
+                    padding-top:90%;
+                }
+                @include mq(tab){
+                    padding-top:50%;
+                }
                 iframe {
+                    position: absolute;
+                    top:0;
+                    left: 0;
                     width:100%;
+                    height: 100%;
                 }
             }
         }
@@ -139,8 +176,8 @@
         background-color:$cBlueBase;
         @include flex();
         &_inner {
-            margin:5% auto 0;
-            width:60%;
+            margin:3% auto 0;
+            width:50%;
             @include mq(tab){
                 width:90%;
             }
@@ -149,12 +186,19 @@
                     @include flex(space-between);
                     li {
                         transition: 0.2s;
+                        @include mq(sp){
+                            &:last-child {
+                                display: none;
+                            }
+                        }
                         &:hover {
                             transition:0.2s;
                             opacity: 0.5;
                         }
+                        
                         a {
                         color:$cWhite;
+                        font-size:0.9rem;
                         @include mq(tab){
                             font-size:1rem;
                         }
@@ -168,7 +212,7 @@
             &_sns {
                 @include flex(space-between);
                 width:30%;
-                margin:10% auto 5%;
+                margin:7% auto 3%;
                 li {
                     transition: 0.2s;
                     &:hover {
@@ -177,7 +221,7 @@
                     }
                     a {
                     color:$cWhite;
-                    font-size: 2.25rem;
+                    font-size: 2rem;
                     @include mq(tab){
                         font-size:1.25rem;
                     }

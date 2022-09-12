@@ -24,6 +24,9 @@
             }
             .slide_img1 {
                 background-image:url(../img/top1.jpg);
+                @include mq(sp){
+                    background-position: 72% 0px!important;
+                }
             }
             .slide_img2 {
                 background-image: url(../img/top2.png);
@@ -42,6 +45,7 @@
                 @include mq(tab){
                     height:84vh;
                 }
+                
             }
             .slick-slide {
                 
@@ -57,7 +61,7 @@
                 left:26%;
             }
             @include mq(sp){
-                left:44%;
+                left:45%;
             }
             
         }
@@ -310,7 +314,6 @@
 /*ABOUT*/
 
 .about {
-    
     position: relative;
     margin-top:110px;
     padding-top:10px;
@@ -343,7 +346,7 @@
                 padding:0 2% 0 1%;
                 color: $cWhite;
                 @include mq(sp){
-                    font-size:1.1rem;
+                    font-size:1rem;
                 }             
             }
         }
@@ -449,7 +452,7 @@
                 margin-top:5%;
                 text-align: center;
                 @include mq(sp){
-                    font-size: 0.8rem;
+                    font-size: 0.7rem;
                     margin-top:15%;
                 }
             }
@@ -569,7 +572,7 @@
                 text-align: center;
                 margin-top:5%;
                 @include mq(sp){
-                    font-size: 0.8rem;
+                    font-size: 0.7rem;
                     margin-top:15%;
                 }
             }
@@ -669,7 +672,7 @@
                     margin-top:10%;
                     text-align: center;
                     @include mq(sp){
-                        font-size: 0.8rem;
+                        font-size: 0.7rem;
                     }
                 }
                 &_tel {
@@ -688,7 +691,7 @@
                         img {
                             width:100%;
                             position: relative;
-                            top:1px;
+                            top:2px;
                         }
                     }
                     h3 {
@@ -696,7 +699,10 @@
                         color: $cBlue;
                         padding-left:1%;   
                         @include mq(tab){
-                            font-size: 1.3rem;
+                            font-size: 1.7rem;
+                        }
+                        @include mq(sp){
+                            font-size:1.1rem;
                         }
                     }
                 }
@@ -758,7 +764,7 @@
                         margin-top:10%;
                     }
                     @include mq(sp){
-                        font-size: 0.8rem;
+                        font-size: 0.7rem;
                     }
                 }
                 &_line {
@@ -777,7 +783,7 @@
                         height: 1px;
                         background-color: $cBlack;
                         @include mq(tab){
-                            width:310px;
+                            width:270px;
                         }
                     }
                     

@@ -11,7 +11,11 @@
     box-sizing: border-box;
     @include mq(tab){
         padding:10px 20px;
+        height: 100px;
+    }
+    @include mq(sp){
         height: 77px;
+        
     }
     &_wrapper {
         @include flex(space-between);
@@ -46,7 +50,7 @@
                             }
                             @include mq(tab) {
                                 line-height: 3;
-                                font-size: 1.5rem;
+                                font-size: 1.1rem;
                             }
                             &:hover {
                                 transition: 0.3s;
@@ -171,7 +175,7 @@
     @include mq(tab) {
         position: fixed;
         z-index: 9999;
-        top: 8px;
+        top: 18px;
         right: 0px;
         cursor: pointer;
         width: 79px;
@@ -215,7 +219,17 @@
         }
     }
     @include mq(sp){
-        right: -11px;;
+        right: -11px;
+        top:7px;
+        width:75px;
+        span {
+            &:nth-of-type(2){
+                top:28px;
+            }
+            &:nth-of-type(3){
+                top:43px;
+            }
+        }
     }
 }
 	
