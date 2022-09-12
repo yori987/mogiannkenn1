@@ -262,9 +262,9 @@
                     margin-bottom:3%;
                 }
                 &_img {
-                    width:106px;
+                    width:85px;
                     height: 90px;
-                    margin:20px auto 40px;
+                    margin:30px auto;
                     @include mq(tab){
                         width:50%;
                         margin:20px auto 0;
@@ -275,7 +275,7 @@
                     }
                 }
                 ._img1 {
-                    margin:43px auto 20px;
+                    margin:60px auto;
                     @include mq(tab){
                         margin:20px auto 0;
                         position: relative;
@@ -283,7 +283,7 @@
                     }
                 }
                 ._img2{
-                    width:25%;
+                    width:20%;
                     
                 }
 
