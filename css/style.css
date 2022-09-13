@@ -218,6 +218,13 @@ input, select {
 }
 @media screen and (max-width: 768px) {
   .reception-time {
+    top: 758px;
+    right: 12px;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .reception-time {
     display: none;
   }
 }
@@ -246,6 +253,11 @@ input, select {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 768px) {
+  .reception-time_inner {
+    padding: 32px 32px 44px 4px;
+  }
+}
 .reception-time_inner_ttl {
   padding: 4px 32px;
   margin-right: 48px;
@@ -254,6 +266,11 @@ input, select {
   font-size: 1rem;
   letter-spacing: 0.5em;
   color: #F9D02F;
+}
+@media screen and (max-width: 768px) {
+  .reception-time_inner_ttl {
+    margin-right: 0%;
+  }
 }
 .reception-time_inner_time-table th {
   padding: 20px 0;
@@ -264,11 +281,21 @@ input, select {
   padding-right: 10px;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .reception-time_inner_time-table th:first-child {
+    width: 25%;
+  }
+}
 .reception-time_inner_time-table th:not(:first-child) {
   width: 60px;
 }
 .reception-time_inner_time-table_list_item ._noneline {
   border-bottom: none;
+}
+@media screen and (max-width: 768px) {
+  .reception-time_inner_time-table_list_item ._noneline {
+    font-size: 0.8rem;
+  }
 }
 .reception-time_inner_time-table_list_item_check {
   padding: 20px 0;
@@ -277,6 +304,11 @@ input, select {
   line-height: 2;
   position: relative;
   top: 8px;
+}
+@media screen and (max-width: 768px) {
+  .reception-time_inner_time-table_list_item_check {
+    top: 4px;
+  }
 }
 .reception-time_inner_time-table_list_item_check::before {
   content: "";
@@ -287,6 +319,12 @@ input, select {
   margin-left: auto;
   margin-right: auto;
   background-color: #91C3E0;
+}
+@media screen and (max-width: 768px) {
+  .reception-time_inner_time-table_list_item_check::before {
+    width: 15px;
+    height: 15px;
+  }
 }
 .reception-time_inner_time-table small {
   display: inline-block;
@@ -383,7 +421,9 @@ input, select {
   width: 100%;
 }
 .menu_inner_list_item ._img1 {
-  margin: 60px auto;
+  margin: 30px auto;
+  position: relative;
+  top: 20px;
 }
 @media screen and (max-width: 768px) {
   .menu_inner_list_item ._img1 {
@@ -452,7 +492,7 @@ input, select {
 }
 .about_inner .subttl_2 span {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 400;
   background-color: #37A1DB;
   padding: 0 2% 0 1%;
@@ -594,7 +634,7 @@ input, select {
 }
 .treatment_inner_wrapper_list_item_items {
   width: 30%;
-  max-width: 350px;
+  max-width: 444px;
   height: 410px;
   box-sizing: border-box;
   background-color: #fff;
@@ -606,6 +646,7 @@ input, select {
 @media screen and (max-width: 768px) {
   .treatment_inner_wrapper_list_item_items {
     width: 100%;
+    height: 460px;
   }
 }
 .treatment_inner_wrapper_list_item_items::before {
@@ -711,6 +752,16 @@ input, select {
   width: 90%;
   margin: 5% auto;
 }
+@media screen and (max-width: 768px) {
+  .feature_inner_wrapper_list {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .feature_inner_wrapper_list {
+    width: 90%;
+  }
+}
 .feature_inner_wrapper_list_item {
   width: 100%;
   display: flex;
@@ -751,6 +802,7 @@ input, select {
   width: 100%;
   height: 230px;
   border-radius: 20px;
+  padding-bottom: 10%;
 }
 @media screen and (max-width: 768px) {
   .feature_inner_wrapper_list_item_items_txt {
@@ -776,7 +828,7 @@ input, select {
 .feature_inner_wrapper_list_item_items_txt p {
   width: 75%;
   text-align: left;
-  margin: 5% auto;
+  margin: 10% auto 5%;
 }
 
 /*CONTACT*/
@@ -887,6 +939,12 @@ input, select {
     display: block;
     text-align: left;
     margin-bottom: 3%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact-reserve_inner_wrapper_time_list_item th,
+.contact-reserve_inner_wrapper_time_list_item td {
+    margin-bottom: 6%;
   }
 }
 .contact-form {
@@ -1718,7 +1776,7 @@ main {
 .header_wrapper_right_nav_list_item_tel_inner_item_num {
   font-weight: 500;
   color: #37A1DB;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   align-items: center;
 }
 @media screen and (max-width: 1024px) {

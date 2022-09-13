@@ -1,5 +1,42 @@
 "use strict";
 
+//診察時間RECEPTION-TIME
+
+function FixedAnime(){
+  let wid = $(window).width();
+  
+  if (wid > 1200) {
+    $(window).scroll(function(){
+      if ($(window).scrollTop()> 450){
+        $('#reception-time').addClass('fixed');
+      }else {
+        $('#reception-time').removeClass('fixed');
+      }
+    });
+  }else if(wid > 768 && wid < 1200) {
+    $(window).scroll(function(){
+      if ($(window).scrollTop()> 916){
+        $('#reception-time').addClass('fixed');
+      }else {
+        $('#reception-time').removeClass('fixed');
+      }
+    });
+  } else if (wid > 358){
+    $(window).scroll(function(){
+      if ($(window).scrollTop()> 608){
+        $('#reception-time').addClass('fixed');
+      }else {
+        $('#reception-time').removeClass('fixed');
+      }
+    });
+  }
+
+}
+
+$(window).scroll(function(){
+  FixedAnime();
+});
+
 //ハンバーガーメニュー
 $(".openbtn").click(function () {//ボタンがクリックされたら
 	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
@@ -159,33 +196,5 @@ $(window).scroll(function(){
 });
 
 
-//診察時間RECEPTION-TIME
 
-function FixedAnime(){
-  let wid = $(window).width();
-  
-  if (wid > 1200) {
-    $(window).scroll(function(){
-      if ($(window).scrollTop()> 450){
-        $('#reception-time').addClass('fixed');
-      }else {
-        $('#reception-time').removeClass('fixed');
-      }
-    });
-  }
-
-  if (wid > 768 && wid < 1200) {
-    $(window).scroll(function(){
-      if ($(window).scrollTop()> 916){
-        $('#reception-time').addClass('fixed');
-      }else {
-        $('#reception-time').removeClass('fixed');
-      }
-    });
-  }
-}
-
-$(window).scroll(function(){
-  FixedAnime();
-});
 
