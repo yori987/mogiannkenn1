@@ -1,33 +1,33 @@
 "use strict";
-
 //診察時間RECEPTION-TIME
 
 function FixedAnime(){
   let wid = $(window).width();
   
-  if (wid > 1200) {
+  if ( wid > 1200 ) {
     $(window).scroll(function(){
-      if ($(window).scrollTop()> 450){
+      if ($(window).scrollTop()> 350){
         $('#reception-time').addClass('fixed');
       }else {
         $('#reception-time').removeClass('fixed');
       }
     });
-  }else if(wid > 768 && wid < 1200) {
+  } else if ( wid < 1200 && wid > 768 ) {
     $(window).scroll(function(){
-      if ($(window).scrollTop()> 916){
+      if ($(window).scrollTop()> 716){
         $('#reception-time').addClass('fixed');
-      }else {
+      } else {
         $('#reception-time').removeClass('fixed');
       }
     });
-  } else if (wid > 358){
+  } else if ( wid > 358 ) {
     $(window).scroll(function(){
-      if ($(window).scrollTop()> 608){
+      if ($(window).scrollTop()> 508){
         $('#reception-time').addClass('fixed');
-      }else {
+      } else {
         $('#reception-time').removeClass('fixed');
       }
+      
     });
   }
 
@@ -36,6 +36,15 @@ function FixedAnime(){
 $(window).scroll(function(){
   FixedAnime();
 });
+
+
+
+//診察時間 タブレットでのクリックイベント
+$('.reception-time_inner').click(function(){
+  $(this).toggleClass('hover');
+});
+
+
 
 //ハンバーガーメニュー
 $(".openbtn").click(function () {//ボタンがクリックされたら
@@ -83,6 +92,8 @@ $(function () {
     });
 });
 
+
+
 //スムーススクロール
 $('#js-nav a').on('click',function(){
   let hrefElement = $(this).attr('href');
@@ -93,6 +104,8 @@ $('#js-nav a').on('click',function(){
   },500);
   return false;
 });
+
+
 
 //スクロールアニメーション
 function fadeIn (){
@@ -136,6 +149,8 @@ function fadeIn (){
     fadeIn();
   });
 
+
+
 //順番に要素がスクロールアップされる
 function delayScrollAnime(){
   let time = 0.2 ;
@@ -173,6 +188,8 @@ $(window).scroll(function(){
   delayScrollAnime();
 });
 
+
+
 //スクロール途中でヘッダーが表示非表示
 let beforePos =0 ;
 function ScrollAnime(){
@@ -194,6 +211,7 @@ function ScrollAnime(){
 $(window).scroll(function(){
   ScrollAnime();
 });
+
 
 
 

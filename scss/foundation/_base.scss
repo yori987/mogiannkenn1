@@ -106,15 +106,14 @@
 
 .reception-time {
     position: absolute;
-    top:600px;
+    top:500px;
     right:20px;
     z-index: 10;
-    
     @include mq(pc){
-        top:1066px;
+        top:866px;
     }
     @include mq(tab){
-        top:758px;
+        top:658px;
         right: 12px;
         width:70%;
     }
@@ -126,13 +125,22 @@
         top:150px;
         pointer-events: none;
         z-index: 100;
-        
         .reception-time_inner {
             transform: translateX(calc(100% - 70px));
             transition: 0.6s;
             &:hover {
                 transform: translateX(0);
                 transition: 0.6s;
+                @include mq(pc){
+                    transform: translateX(calc(100% - 70px));
+                    transition: 0.6s;
+                }
+            }
+            &.hover {
+                @include mq(pc){
+                transform: translateX(0);
+                transition: 0.4s;
+                }
             }
         }
     }
@@ -145,7 +153,7 @@
         transition: 0.6s;
         @include flex();
         @include mq(tab){
-            padding:32px 32px 44px 4px;
+            padding:32px 32px 32px 4px;
         }
         &_ttl {
             padding:4px 32px;
@@ -289,12 +297,16 @@
                     height: 90px;
                     margin:30px auto;
                     @include mq(tab){
-                        width:50%;
-                        margin:20px auto 0;
+                        width:40%;
+                        margin:23px auto 0;
                     }
 
                     img {
                         width:100%;
+                        @include mq(tab){
+                            position: relative;
+                            top:6px;
+                        }
                     }
                 }
                 ._img1 {
@@ -302,9 +314,9 @@
                     position: relative;
                     top:20px;
                     @include mq(tab){
-                        margin:20px auto 0;
+                        margin:23px auto 0;
                         position: relative;
-                        top: 22px;
+                        top: 20px;
                     }
                 }
                 ._img2{
@@ -318,6 +330,14 @@
                         margin:0 auto;
                         position:relative;
                         top:22px;
+                    }
+                }
+                ._img4 {
+                    @include mq(tab){
+                        img {
+                            position: relative;
+                            top:17px;
+                        }
                     }
                 }
                 &_ttl {
@@ -547,17 +567,20 @@
                         }
                         ._img1 {
                             top:20px;
+                            @include mq(tab){
+                                top:40px;
+                            }
                         }
                         ._img2 {
                             top:0px;
                             @include mq(tab){
-                                top:20px;
+                                top:35px;
                             }
                         }
                         ._img3 {
                             top:0px;
                             @include mq(pc){
-                                top:20px;
+                                top:15px;
                             }
                         }
                         ._img4{
@@ -570,6 +593,9 @@
                         ._img5 {
                             width:28%;
                             top:5px;
+                            @include mq(tab){
+                                top:25px;
+                            }
                         }
                     }
                 }
@@ -624,6 +650,7 @@
                     }
                     &_items {
                         width:40%;
+                        max-width: 444px;
                         @include mq(tab){
                             width:100%;
                         }
@@ -769,6 +796,14 @@
                                     margin-bottom:6%;
                                 }
                             }
+                            .sp {
+                                @include mq(tab){
+                                    display: none;
+                                }
+                                @include mq(sp){
+                                    display: inline;
+                                }
+                            }
                         }
                     }
                 }
@@ -831,6 +866,14 @@
                         }
                     }
                     
+                }
+                .sp {
+                    @include mq(tab){
+                        display: none;
+                    }
+                    @include mq(sp){
+                        display: inline;
+                    }
                 }
             }
         }

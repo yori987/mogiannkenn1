@@ -17,6 +17,11 @@ body {
   
 }
 
+.body {
+  position: relative;
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   color: $cBlack;
@@ -260,7 +265,7 @@ main {
 
 
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 769px) {
     .pc {
       display: inline;
     }
@@ -268,7 +273,7 @@ main {
       display: none;
     }
   }
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 769px) {
     .pc {
       display: none;
     }
