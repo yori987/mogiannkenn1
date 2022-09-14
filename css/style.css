@@ -659,7 +659,7 @@ input, select {
 .treatment_inner_wrapper_list_item_items {
   width: 30%;
   max-width: 444px;
-  height: 410px;
+  height: 430px;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 20px;
@@ -728,7 +728,7 @@ input, select {
   }
 }
 .treatment_inner_wrapper_list_item_items ._img2 {
-  top: 0px;
+  top: 10px;
 }
 @media screen and (max-width: 768px) {
   .treatment_inner_wrapper_list_item_items ._img2 {
@@ -745,7 +745,7 @@ input, select {
 }
 .treatment_inner_wrapper_list_item_items ._img4 {
   width: 35%;
-  top: 0px;
+  top: 15px;
 }
 @media screen and (max-width: 1024px) {
   .treatment_inner_wrapper_list_item_items ._img4 {

@@ -511,7 +511,7 @@
                     &_items {
                         width:30%;
                         max-width:444px;
-                        height: 410px;
+                        height: 430px;
                         box-sizing: border-box;
                         background-color: $cWhite;
                         border-radius: 20px;
@@ -572,7 +572,7 @@
                             }
                         }
                         ._img2 {
-                            top:0px;
+                            top:10px;
                             @include mq(tab){
                                 top:35px;
                             }
@@ -585,7 +585,7 @@
                         }
                         ._img4{
                             width:35%;
-                            top:0px;
+                            top:15px;
                             @include mq(pc){
                                 top:25px;
                             }
