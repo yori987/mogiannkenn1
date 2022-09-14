@@ -1772,7 +1772,7 @@ main {
   margin: 0 auto;
 }
 .header_wrapper_left {
-  width: 9%;
+  width: 7%;
 }
 @media screen and (max-width: 768px) {
   .header_wrapper_left {

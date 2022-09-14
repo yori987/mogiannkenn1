@@ -22,7 +22,7 @@
         
         margin:0 auto;
         &_left{
-            width: 9% ;
+            width:  7% ;
             @include mq(tab){
                 width: 14% ;
             }

@@ -58,6 +58,17 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
 });
 
 
+//スムーススクロール
+$('#g-nav a').on('click',function(){
+  let hrefElement = $(this).attr('href');
+  let headerHeight = $('#header').outerHeight(true);
+  let position = $(hrefElement).offset().top - headerHeight;
+  $('body,html').animate({
+    scrollTop:position
+  },500);
+  return false;
+});
+
 $(function () {
     $(".slideShow")
       // 最初のスライドに"add-animation"のclassを付ける(data-slick-index="0"が最初のスライドを指す)
@@ -94,16 +105,7 @@ $(function () {
 
 
 
-//スムーススクロール
-$('#js-nav a').on('click',function(){
-  let hrefElement = $(this).attr('href');
-  let headerHeight = $('#header').outerHeight(true);
-  let position = $(hrefElement).offset().top - headerHeight;
-  $('body,html').animate({
-    scrollTop:position
-  },500);
-  return false;
-});
+
 
 
 
