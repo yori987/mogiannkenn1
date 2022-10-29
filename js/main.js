@@ -1,4 +1,4 @@
-"use strict";
+
 //診察時間RECEPTION-TIME
 
 function FixedAnime(){

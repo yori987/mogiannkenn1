@@ -1,14 +1,16 @@
 @use "../global" as *;
 
 .header {
+    width: 100%;
     position: fixed;
     top:0;
     left:0;
     z-index: 30;
     background-color: $cWhite;
-    height:110px;
+    height:100px;
     padding: 10px 12px 10px 28px;
     box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
     @include mq(tab){
         padding:10px 20px;
         height: 100px;
@@ -40,17 +42,18 @@
                     align-items: center;
                     
                     &_item {
-                        
+                        box-sizing: border-box;
                         a {
                             padding-right:1.1rem;
                             font-size: 0.9rem;
                             transition: 0.3s;
                             @include mq(pc){
                                 font-size: 0.8rem;
+                                padding-right:0.6rem;
                             }
                             @include mq(tab) {
                                 line-height: 3;
-                                font-size: 1.1rem;
+                                font-size: 1rem;
                             }
                             &:hover {
                                 transition: 0.3s;
@@ -65,7 +68,9 @@
                                     display: block;
                                     font-size: 0.8rem;
                                     margin-bottom:1%;
-                                    
+                                    @include mq(pc){
+                                        font-size: 0.6rem;
+                                    }
                                 }
                                 &_item {
                                     display: flex;
@@ -73,10 +78,11 @@
                                     margin-bottom:2%;
                                     
                                     &_img {
-                                        
                                         width:2.6rem;
                                         align-items: center;
-                                        
+                                        @include mq(pc){
+                                            width:2rem;
+                                        }
                                         img {
                                             width:100%;
                                             align-items: center;
@@ -89,7 +95,7 @@
                                         font-size: 1.5rem;
                                         align-items: center;
                                         @include mq(pc){
-                                            font-size: 1.5rem;
+                                            font-size: 1.1rem;
                                         }
                                     }
                                 }

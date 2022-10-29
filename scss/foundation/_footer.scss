@@ -14,25 +14,22 @@
         @include flex();
         width:100%;
         margin-bottom:5%;
-        @include mq(tab){
+        @include mq(pc){
             flex-direction: column-reverse;
         }
         &_left {
-            width:60%;
+            display: grid;
+            place-content: center;
             @include mq(pc){
-                width: 80%;
+                
             }
-            @include mq(tab){
+            @include mq(pc){
                 width:100%;
             }
             &_inner {
                 width:90%;
                 margin:0 auto 0 10%;
                 @include mq(pc){
-                    margin:0 auto;
-                }
-                @include mq(tab){
-                    width:70%;
                     margin:5% auto;
                 }
                 @include mq(sp){
@@ -40,7 +37,7 @@
                 }
                 &_img {
                     width:20%;
-                    @include mq(tab){
+                    @include mq(pc){
                         margin-left:5%;
                     }
                     img {
@@ -51,7 +48,7 @@
                 &_tel {
                     width:70%;
                     margin:5% auto;
-                    @include mq(tab){
+                    @include mq(pc){
                         width:50%;
                     }
                     @include mq(sp){
@@ -68,7 +65,7 @@
                         margin-top:3%;
                         &_img {
                             width:10%;
-                            @include mq(tab){
+                            @include mq(pc){
                                 display: none;
                             }
                             img {
@@ -89,8 +86,8 @@
                     }
                 }
                 &_table {
-                    width:85%;
-                    margin:3% auto;
+                    display: grid;
+                    place-content: center;
                     @include mq(sp){
                         width:100%;
                     }
@@ -126,7 +123,7 @@
                                 font-size: 0.1rem;
                             }
                         }
-                        @include mq(tab){
+                        @include mq(sp){
                             font-size: 0.1em;
                         }
                     }
@@ -148,7 +145,7 @@
         &_right {
             width:45%;
             
-            @include mq(tab){
+            @include mq(pc){
                 width:100%;
             }
             &_map {
@@ -157,9 +154,6 @@
                 padding-top:65%;
                 position: relative;
                 @include mq(pc){
-                    padding-top:90%;
-                }
-                @include mq(tab){
                     padding-top:50%;
                 }
                 iframe {
